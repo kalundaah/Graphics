@@ -13,6 +13,27 @@ boy = vrnode(world,'Boy');
 girl = vrnode(world,'Girl');
 van = vrnode(world,'Van');
 
+% Assume svgImage is a MATLAB image representing your SVG
+svgImage = imread('./deco.svg');
+
+% Create a texture map from the SVG image
+textureFilename = 'deco.png';
+imwrite(svgImage, textureFilename);
+
+% Load the texture into the VRML world
+texture = vrnode(world, 'Texture');
+texture.filename = textureFilename;
+
+% Apply the texture to the desired shape (replace ShapeNode with the actual node type)
+shapeNode = vrnode(world, 'ShapeNode');
+shapeNode.appearance.texture = texture;
+
+% Add the shape to the world (adjust translation, rotation, and scale as needed)
+shapeNode.translation = [x, y, z];
+shapeNode.rotation = [0, 1, 0, angle]; % Example rotation around y-axis
+shapeNode.scale = [width, height, depth];
+
+
 
 man.translation = [6.10,-3,-27];
 boy.translation = [8.37,-5,-37.84];

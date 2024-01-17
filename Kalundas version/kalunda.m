@@ -10,40 +10,17 @@ man = vrnode(world,'Man');
 backDoor = vrnode(world,'Back_Door');
 camera = vrnode(world,'Camera');
 boy = vrnode(world,'Boy');
-girl = vrnode(world,'Girl');
 van = vrnode(world,'Van');
+girl = vrnode(world,'Girl');
 
-% Assume svgImage is a MATLAB image representing your SVG
-svgImage = imread('./deco.svg');
-
-% Create a texture map from the SVG image
-textureFilename = 'deco.png';
-imwrite(svgImage, textureFilename);
-
-% Load the texture into the VRML world
-texture = vrnode(world, 'Texture');
-texture.filename = textureFilename;
-
-% Apply the texture to the desired shape (replace ShapeNode with the actual node type)
-shapeNode = vrnode(world, 'ShapeNode');
-shapeNode.appearance.texture = texture;
-
-% Add the shape to the world (adjust translation, rotation, and scale as needed)
-shapeNode.translation = [x, y, z];
-shapeNode.rotation = [0, 1, 0, angle]; % Example rotation around y-axis
-shapeNode.scale = [width, height, depth];
-
-
-
+girl.translation= [12.10,-4,-27];
 man.translation = [6.10,-3,-27];
 boy.translation = [8.37,-5,-37.84];
 
-location = 'decos.png';
-deco = imread(location);
-imshow(deco);
 
-children = get(world,'Nodes');
-disp(children)
+newscale = [0.025,0.025,0.025];
+boy.scale = newscale;
+
 
 camera.position = [-3.90, -3.0, -27.84];
 camera.orientation =[0,0.9,0,-0.80];
@@ -59,6 +36,7 @@ for step = 1:numSteps
     value = value + 0.05;
     camera.position = [value,camera.position(2),camera.position(3)];
     vrdrawnow;
+    pause(0.01)
 end
 
 
@@ -72,6 +50,7 @@ for step = 1:numSteps
     value = value + 0.05;
     camera.position = [value,camera.position(2),camera.position(3)];
     vrdrawnow;
+    pause(0.01)
 end
 
 
@@ -86,9 +65,10 @@ for step = 1:numSteps
     value = value + 0.05;
     camera.position = [value,camera.position(2),camera.position(3)];
     vrdrawnow;
+    pause(0.01)
 end
 
-camera.position = [8.49,-2.04,-32.49]
+camera.position = [8.49,-2.04,-32.49];
 camera.orientation =[0,0.2,0,-0.75];
 vrdrawnow;
 
@@ -97,5 +77,60 @@ for step = 1:numSteps
     value = value - 0.01;
     camera.position = [camera.position(1),value,camera.position(3)];
     vrdrawnow;
+    pause(0.01)
 end
+
+
+
+camera.position = [-3.90, -3.0, -27.84];
+camera.orientation =[0,0.9,0,-0.80];
+vrdrawnow;
+
+girl.translation = [10,-4,-32.49];
+newrotation = [0,1,0];
+newangle = 185;
+girl.rotation = [newrotation,newangle];
+vrdrawnow;
+
+man.translation = [13,-3,-33]; 
+vrdrawnow;
+pause(2);
+
+camera.position = [8.49,-2.04,-32.49];
+camera.orientation =[0,0.2,0,-0.75];
+vrdrawnow;
+
+for step = 1:numSteps
+    value = camera.position(2);
+    value = value - 0.01;
+    camera.position = [camera.position(1),value,camera.position(3)];
+    vrdrawnow;
+    pause(0.01)
+end
+
+
+numSteps = 100;
+for step = 1:numSteps
+    boy.translation = [boy.translation(1)+0.005,boy.translation(2),boy.translation(3)+0.025];
+    vrdrawnow;
+    pause(0.01)
+end
+
+
+newangle = 190;
+boy.rotation=[newrotation,newangle];
+
+pause(3);
+
+
+ideal = [5.08,-4.04,-28.83];
+disp(camera.position);
+numsteps = 10;
+for step = 1:numSteps
+    camera.position = [camera.position(1)-0.0273,camera.position(2),camera.position(3)+0.0244];
+    vrdrawnow;
+    pause(0.03)
+end
+disp(camera.position);
+
 

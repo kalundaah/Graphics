@@ -12,7 +12,7 @@ DEF Roof Transform {
       children Shape {
         appearance Appearance {
           texture DEF Metal_Corrugated ImageTexture {
-            url "texture/metal.jpg" 
+            url "withcameraview_files/texture/metal.jpg" 
           }
           material Material {
             diffuseColor 1 1 1
@@ -1298,7 +1298,7 @@ DEF Boy Transform {
             material Material {
               specularColor 0.5673 0.5673 0.5673
               shininess 0.3
-              diffuseColor 0 0.5 0.5
+              diffuseColor 0 0 0
               ambientIntensity 0.266667
             }
           }
@@ -1345,7 +1345,7 @@ DEF Boy Transform {
             material Material {
               specularColor 0.5673 0.5673 0.5673
               shininess 0.3
-              diffuseColor 0 0.5 0.5
+              diffuseColor 0 0 0
               ambientIntensity 0.266667
             }
           }
@@ -1657,7 +1657,7 @@ DEF Boy Transform {
             material Material {
               specularColor 0.5673 0.5673 0.5673
               shininess 0.3
-              diffuseColor 0 0.5 0.5
+              diffuseColor 0 0 0
               ambientIntensity 0.266667
             }
           }
@@ -1726,7 +1726,7 @@ DEF Boy Transform {
             material Material {
               specularColor 0.5673 0.5673 0.5673
               shininess 0.3
-              diffuseColor 0 0.5 0.5
+              diffuseColor 0 0 0
               ambientIntensity 0.266667
             }
           }
@@ -2022,7 +2022,7 @@ DEF Boy Transform {
             material Material {
               specularColor 0.5673 0.5673 0.5673
               shininess 0.3
-              diffuseColor 0 0.5 0.5
+              diffuseColor 0 0 0
               ambientIntensity 0.266667
             }
           }
@@ -4093,9 +4093,9 @@ DEF Girl Transform {
   }
 }
 DEF Woman Transform {
-  translation 17.5 -3.55 -53.5
+  translation 11 -3 -53.5
   scale 0.07 0.07 0.07
-  rotation -1 0 0 1.5708
+  rotation 1 1 0 0
   children Transform {
     children [
       Transform {
@@ -5387,7 +5387,7 @@ DEF Woman Transform {
             material Material {
               specularColor 0.1467 0.1469 0.0965
               shininess 0.125
-              diffuseColor 0.0776 0.2571 0.2041
+              diffuseColor 0 0 0
               ambientIntensity 0.0796
             }
           }
@@ -5550,7 +5550,7 @@ DEF Woman Transform {
             material Material {
               specularColor 1 0.6667 0
               shininess 0.32945
-              diffuseColor 1 0.6667 0
+              diffuseColor 0 0 1
               ambientIntensity 0.555567
             }
           }
@@ -8885,7 +8885,7 @@ DEF Close_kitchen_wall Transform {
       children Shape {
         appearance Appearance {
           texture DEF Pebbles ImageTexture {
-            url "texture/whiteslab.jpg" 
+            url "withcameraview_files/texture/whiteslab.jpg" 
           }
           material Material {
             emissiveColor 0.2 0.2 0.2
@@ -9636,7 +9636,7 @@ DEF Backwall Transform {
       children Shape {
         appearance Appearance {
           texture ImageTexture {
-            url "texture/whiteslab.jpg" 
+            url "withcameraview_files/texture/whiteslab.jpg" 
           }
           material Material {
             emissiveColor 0.2 0.2 0.2
@@ -9670,7 +9670,7 @@ DEF Front_wall Transform {
       children Shape {
         appearance Appearance {
           texture ImageTexture {
-            url "texture/whiteslab.jpg" 
+            url "withcameraview_files/texture/whiteslab.jpg" 
           }
           material Material {
             emissiveColor 0.2 0.2 0.2
@@ -9705,7 +9705,7 @@ DEF Right_wall Transform {
       children Shape {
         appearance Appearance {
           texture ImageTexture {
-            url "texture/whiteslab.jpg" 
+            url "withcameraview_files/texture/whiteslab.jpg" 
           }
           material Material {
             emissiveColor 0.2 0.2 0.2
@@ -9894,7 +9894,7 @@ DEF MainDoor Transform {
       children Shape {
         appearance Appearance {
           texture ImageTexture {
-            url "texture/whiteslab.jpg" 
+            url "withcameraview_files/texture/whiteslab.jpg" 
           }
           material Material {
             emissiveColor 0.2 0.2 0.2
@@ -9934,7 +9934,7 @@ DEF HouseFloor Transform {
   children Shape {
     appearance Appearance {
       texture DEF Wood_Brown ImageTexture {
-        url "texture/Wood_5.jpg" 
+        url "withcameraview_files/texture/Wood_5.jpg" 
       }
       material Material {
       }
@@ -29932,7 +29932,7 @@ DEF Parking_Wall Transform {
       children Shape {
         appearance Appearance {
           texture ImageTexture {
-            url "texture/whiteslab.gif" 
+            url "withcameraview_files/texture/whiteslab.jpg" 
           }
           material Material {
             emissiveColor 0.2 0.2 0.2
@@ -37042,7 +37042,7 @@ Transform {
   ]
 }
 DEF Deerstatue Transform {
-  translation -2.5 -5.3 -39.32
+  translation -2.5 -5.3 -38.9
   scale 0.2 0.2 0.2
   children Transform {
     children [
@@ -39829,4 +39829,8 @@ DEF XmasTree Transform {
       }
     }
   }
+}
+DEF Fromtv Viewpoint {
+  position 12.6183 -1.89604 -35.66692
+  orientation -0.09953575 0.9778523 0.184113 2.116874
 }

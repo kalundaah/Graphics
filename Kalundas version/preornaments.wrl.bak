@@ -39585,7 +39585,7 @@ DEF Deerstatue Transform {
     ]
   }
 }
-DEF XmasTree Transform {
+DEF xmastree Transform {
   translation 12.08 -3.04 -29
   scale 1.5 1.5 1.5
   children Transform {

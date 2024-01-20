@@ -1,21 +1,22 @@
-world = vrworld('preornaments.WRL');
+world = vrworld('withcameraview.WRL');
 open(world);
 
 fig = view(world, '-internal');
 vrdrawnow;
 
 
-%World Objects
+% World Objects
 man = vrnode(world,'Man');
-% backDoor = vrnode(world,'Back_Door');
-% packingwall = vrnode(world,'Parking_Wall');
+backDoor = vrnode(world,'Back_Door');
+packingwall = vrnode(world,'Parking_Wall');
 camera = vrnode(world,'Camera');
 boy = vrnode(world,'Boy');
 girl = vrnode(world,'Girl');
-
+woman = vrnode(world,'Woman');
 
 girl.translation= [12.10,-4,-27];
 man.translation = [6.10,-3,-27];
+woman.translation = [11,-3,-53.5];
 boy.translation = [8.37,-5,-37.84];
 
 
@@ -124,14 +125,62 @@ boy.rotation=[newrotation,newangle];
 pause(3);
 
 
-ideal = [5.08,-4.04,-28.83];
-disp(camera.position);
-numsteps = 10;
+
+%The move back
 for step = 1:numSteps
     camera.position = [camera.position(1)-0.0273,camera.position(2),camera.position(3)+0.0244];
     vrdrawnow;
     pause(0.03)
 end
+ideal = camera.position;
+
+% The deer statue
+camera.position = [-3.5,-4,-34.32];
+numSteps = 250;
+for step = 1:numSteps
+    value = camera.position(2);
+    value = value - 0.005;
+    camera.position = [camera.position(1),value,camera.position(3)];
+    vrdrawnow;
+    pause(0.01)
+end
+
+woman.translation = [1.5,-3,-42.32];
+newrotation = [0,1,0];
+newangle = 191;
+woman.rotation = [newrotation,newangle];
+camera.position = [-1.5,-4,-34.32];
+
+pause(1.5);
+
+
+camera.position = ideal;
+vrdrawnow;
+
+ideal = [10,-4,-32.49];
+numSteps = 100;
+idealx = (10-1.5)/numSteps;
+idealy = (4-3)/numSteps;
+idealz = (42.32-34.32)/numSteps;
+
+for step = 1:numSteps
+    woman.translation = [woman.translation(1)+idealx,woman.translation(2) ,woman.translation(3)+idealz];
+    vrdrawnow;
+    pause(0.01);
+end
+
 disp(camera.position);
+
+view = vrnode(world,'Fromtv');
+
+camera.position= view.position;
+camera.orientation = view;
+
+
+
+
+
+
+
 
 

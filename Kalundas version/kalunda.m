@@ -1,4 +1,4 @@
-world = vrworld('final.WRL');
+world = vrworld('preornaments.WRL');
 open(world);
 
 fig = view(world, '-internal');
@@ -7,11 +7,12 @@ vrdrawnow;
 
 %World Objects
 man = vrnode(world,'Man');
-backDoor = vrnode(world,'Back_Door');
+% backDoor = vrnode(world,'Back_Door');
+% packingwall = vrnode(world,'Parking_Wall');
 camera = vrnode(world,'Camera');
 boy = vrnode(world,'Boy');
-van = vrnode(world,'Van');
 girl = vrnode(world,'Girl');
+
 
 girl.translation= [12.10,-4,-27];
 man.translation = [6.10,-3,-27];

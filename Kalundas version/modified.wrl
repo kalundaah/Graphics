@@ -12493,5 +12493,3 @@ Background {
   ]
   groundAngle [0.9, 1.5, 1.57]
 }
-DEF Ornament Transform {
-}

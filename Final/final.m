@@ -1,5 +1,5 @@
 % Calling the wrl file
-world = vrworld('tvset.WRL');
+world = vrworld('final.WRL');
 open(world);
 
 % Draw the world in a view
@@ -175,9 +175,23 @@ for step = 1:numSteps
 end
 
 
-camera.position = [13.13,-1.75,-36.51];
-camera.orientation = [-0.099536,0.97785,0.18411,21169];
+%initial camera position
+camera.position = [-3.90, -3.0, -27.84];
+camera.orientation =[0,0.9,0,-0.80];
 vrdrawnow;
+
+
+% Number of steps in the loop
+numSteps = 150;
+
+%Loop to gradually change the x position of camera
+for step = 1:numSteps
+    value = camera.position(1);
+    value = value + 0.05;
+    camera.position = [value,camera.position(2),camera.position(3)];
+    vrdrawnow;
+    pause(0.01)
+end
 
 
 

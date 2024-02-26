@@ -53,7 +53,7 @@ We split the roles and responsibilities making sure to make use of every person'
 
 (iii)Dominic Kimeu ([kimeudom](https://github.com/kimeudom)) - Environment modelling,Overall project animation testing,Design review
 
-(iv)Neville Kalunda ([Kalundaah]([kalundaah (Kalundaah) (github.com)](https://github.com/kalundaah))) -High level design,Animations,Character modelling
+(iv)Neville Kalunda ([Kalundaah](https://github.com/kalundaah)) -High level design,Animations,Character modelling
 
 (v)Ruai Dak ([ruai-dak](https://github.com/ruai-dak)) -Research review/User research,Environment modelling,Animations
 
